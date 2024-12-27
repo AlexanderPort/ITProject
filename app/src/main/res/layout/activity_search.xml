@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+    <LinearLayout
+        android:id="@+id/options"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:drawablePadding="10dp"
+            android:textSize="16dp"
+            android:drawableLeft="@mipmap/search"
+            android:textColorHint="@color/white"
+            android:alpha="0.7"
+            android:hint="Search music..."
+            android:background="@drawable/rounded_edittext">
+        </EditText>
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="-5dp">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/trackChip"
+                android:alpha="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By track name" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/artistsChip"
+                android:alpha="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By artist name" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/albumsChip"
+                android:alpha="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By album name" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+    <com.example.freeplayandroidclient.TrackRecyclerView
+        android:id="@+id/trackRecyclerView"
+        android:layout_below="@+id/options"
+        android:layout_above="@+id/menu"
+        android:layout_weight="30"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.freeplayandroidclient.TrackRecyclerView>
+    <include
+        android:id="@+id/menu"
+        layout="@layout/activity_base"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </include>
+</RelativeLayout>
